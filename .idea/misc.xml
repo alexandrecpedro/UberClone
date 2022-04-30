@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/circulo_verde.xml" value="0.189" />
+        <entry key="app/src/main/res/layout/activity_cadastro.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_corrida.xml" value="0.3290083410565338" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.20572916666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_maps.xml" value="0.20572916666666666" />
+        <entry key="app/src/main/res/layout/activity_passageiro.xml" value="0.20572916666666666" />
+        <entry key="app/src/main/res/layout/activity_requisicoes.xml" value="0.20572916666666666" />
+        <entry key="app/src/main/res/layout/adapter_requisicoes.xml" value="0.20572916666666666" />
+        <entry key="app/src/main/res/layout/content_corrida.xml" value="0.2058363731109953" />
+        <entry key="app/src/main/res/layout/content_passageiro.xml" value="0.20572916666666666" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.20572916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

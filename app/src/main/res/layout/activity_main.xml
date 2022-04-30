@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/fundo"
+    tools:context=".activity.MainActivity">
+
+    <ImageView
+        android:contentDescription="@string/iv_desc"
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/layout_width_iv"
+        android:layout_height="@dimen/layout_height_iv"
+        android:layout_marginStart="@dimen/marginStart_iv"
+        android:layout_marginTop="@dimen/marginTop_iv"
+        android:layout_marginEnd="@dimen/marginEnd_iv"
+        android:layout_marginBottom="@dimen/marginBottom_iv"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="@dimen/layout_width_ll"
+        android:layout_height="@dimen/layout_height_ll"
+        android:layout_marginStart="@dimen/marginStart_ll"
+        android:layout_marginEnd="@dimen/marginEnd_ll"
+        android:layout_marginBottom="@dimen/marginBottom_ll"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/pad_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/marginRight_btn"
+            android:layout_weight="1"
+            android:background="@color/btnLogin"
+            android:onClick="abrirTelaLogin"
+            android:paddingRight="@dimen/paddingRight_btn"
+            android:text="@string/btnLogin"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnCadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_btn"
+            android:layout_weight="1"
+            android:background="@color/btnCadastro"
+            android:onClick="abrirTelaCadastro"
+            android:paddingLeft="@dimen/paddingLeft_btn"
+            android:text="@string/btnCadastro"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

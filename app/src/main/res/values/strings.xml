@@ -1,0 +1,43 @@
+<resources>
+    <!-- Views/Activities and App Titles -->
+    <string name="app_name">Uber</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_cadastro">Cadastrar uma conta</string>
+    <string name="title_login">Acessar minha conta</string>
+    <string name="title_menuSair">Sair</string>
+
+    <!-- ImageView Description -->
+    <string name="iv_desc">Uber logo</string>
+
+    <!-- Button Text -->
+    <string name="btnLogin">Entrar</string>
+    <string name="btnCadastro">Cadastrar</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="btnChamar">Chamar Uber</string>
+    <string name="btnAceitar">Aceitar corrida</string>
+
+    <!-- TextInputEditText -->
+    <string name="hint1">E-mail</string>
+    <string name="hint2">Senha</string>
+    <string name="hint3">Nome</string>
+    <!-- EditText -->
+    <string name="hint4">Meu local</string>
+    <string name="hint5">Digite seu destino</string>
+
+    <!-- TextView Desc -->
+    <string name="tv1">Passageiro</string>
+    <string name="tv2">Motorista</string>
+    <string name="tv3">Jamilton Damasceno</string>
+    <string name="tv4">0 km - aproximadamente</string>
+    <string name="title_activity_passageiro">PassageiroActivity</string>
+    <string name="text_textResultado">Aguardando Requisições</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_corrida">CorridaActivity</string>
+</resources>

@@ -1,0 +1,82 @@
+<resources>
+    <!-- ImageView Measures -->
+    <dimen name="layout_width_iv">140dp</dimen>
+    <dimen name="layout_height_iv">140dp</dimen>
+    <dimen name="marginStart_iv">8dp</dimen>
+    <dimen name="marginTop_iv">8dp</dimen>
+    <dimen name="marginEnd_iv">8dp</dimen>
+    <dimen name="marginBottom_iv">8dp</dimen>
+
+    <!-- LinearLayout Measures -->
+    <dimen name="layout_width_ll">0dp</dimen>
+    <dimen name="layout_height_ll">56dp</dimen>
+    <dimen name="marginStart_ll">16dp</dimen>
+    <dimen name="marginEnd_ll">16dp</dimen>
+    <dimen name="marginBottom_ll">16dp</dimen>
+    <dimen name="marginLeft_ll">16dp</dimen>
+    <dimen name="marginRight_ll">16dp</dimen>
+    <dimen name="marginTop_ll">80dp</dimen>
+    <dimen name="pad_8dp">8dp</dimen>
+    <dimen name="pad_16dp">16dp</dimen>
+
+    <!-- TextInputLayout Measures -->
+    <dimen name="layout_width_til">368dp</dimen>
+    <dimen name="marginStart_til">8dp</dimen>
+    <dimen name="marginEnd_til">8dp</dimen>
+    <dimen name="marginBottom_til">16dp</dimen>
+
+    <dimen name="marginStart_til2">16dp</dimen>
+    <dimen name="marginEnd_til2">16dp</dimen>
+    <dimen name="marginBottom_til2">16dp</dimen>
+
+    <!-- TextView Measures -->
+    <dimen name="marginStart_tv">8dp</dimen>
+    <dimen name="marginEnd_tv">8dp</dimen>
+    <dimen name="marginBottom_tv">8dp</dimen>
+    <dimen name="textSize_tv">18sp</dimen>
+    <dimen name="textSize_tv2">12sp</dimen>
+
+    <!-- Switch Measures -->
+    <dimen name="marginStart_swt">8dp</dimen>
+    <dimen name="marginEnd_swt">8dp</dimen>
+
+    <!-- Button Login/Cadastrar Measures -->
+    <dimen name="marginRight_btn">4dp</dimen>
+    <dimen name="paddingRight_btn">4dp</dimen>
+    <dimen name="marginLeft_btn">4dp</dimen>
+    <dimen name="paddingLeft_btn">4dp</dimen>
+    <dimen name="marginTop_btn">16dp</dimen>
+
+    <!-- Button Entrar Measures -->
+    <dimen name="layout_width_btnEntrar">0dp</dimen>
+    <dimen name="marginStart_btnEntrar">16dp</dimen>
+    <dimen name="marginEnd_btnEntrar">16dp</dimen>
+    <dimen name="layout_height_btnChamar">60dp</dimen>
+
+    <!-- Button AceitarCorrida Measures -->
+    <dimen name="layout_height_btnAceitar">60dp</dimen>
+
+    <!-- FloatingActionButton Measures -->
+    <dimen name="marginBottom_fab">66dp</dimen>
+    <dimen name="marginEnd_fab">16dp</dimen>
+
+    <!-- EditText Measures -->
+    <dimen name="layout_height_et">40dp</dimen>
+    <dimen name="drawablePadding_et">6dp</dimen>
+    <dimen name="textSize_et">18sp</dimen>
+
+    <!-- Fragment Measures -->
+    <dimen name="layout_width_fr">0dp</dimen>
+    <dimen name="layout_height_fr">0dp</dimen>
+
+    <!-- RecyclerView Measures -->
+    <dimen name="layout_width_rv">0dp</dimen>
+    <dimen name="layout_height_rv">0dp</dimen>
+    <dimen name="marginStart_rv">8dp</dimen>
+    <dimen name="marginEnd_rv">8dp</dimen>
+    <dimen name="marginTop_rv">8dp</dimen>
+    <dimen name="marginBottom_rv">8dp</dimen>
+
+
+</resources>
+
