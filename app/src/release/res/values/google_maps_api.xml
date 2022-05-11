@@ -23,6 +23,6 @@
     <string name="google_maps_key"
         templateMergeStrategy="preserve"
         translatable="false">
-        AIzaSyBi3j-R0Il3JDszK0fELsdaVJIAI7cxrTY <!-- YOUR_KEY_HERE -->
+        MyKeyHere <!-- YOUR_KEY_HERE -->
     </string>
 </resources>
