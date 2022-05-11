@@ -119,20 +119,20 @@ public class CadastroActivity extends AppCompatActivity {
                                     "Sucesso ao cadastrar Motorista!",
                                     Toast.LENGTH_SHORT).show();
                         }
-                    } catch(Exception e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
                     String excecao = "";
                     try {
                         throw task.getException();
-                    } catch (FirebaseAuthWeakPasswordException e){
+                    } catch (FirebaseAuthWeakPasswordException e) {
                         excecao = "Digite uma senha mais forte!";
-                    } catch ( FirebaseAuthInvalidCredentialsException e){
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
                         excecao= "Por favor, digite um e-mail válido";
                     } catch (FirebaseAuthUserCollisionException e){
                         excecao = "Este conta já foi cadastrada";
-                    } catch (Exception e){
+                    } catch (Exception e) {
                         excecao = "Erro ao cadastrar usuário: "  + e.getMessage();
                         e.printStackTrace();
                     }

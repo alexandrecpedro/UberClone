@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     /** Attributes **/
     private FirebaseAuth autenticacao;
     // permissoes de acesso de local
-    private String[] permissoes = new String[]{
+    private String[] permissoes = new String[] {
             Manifest.permission.ACCESS_FINE_LOCATION
     };
 

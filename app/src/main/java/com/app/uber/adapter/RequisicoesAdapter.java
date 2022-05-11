@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.uber.R;
+import com.app.uber.helper.Local;
 import com.app.uber.model.Requisicao;
 import com.app.uber.model.Usuario;
 import com.google.android.gms.maps.model.LatLng;
@@ -43,6 +44,7 @@ public class RequisicoesAdapter extends RecyclerView.Adapter<RequisicoesAdapter.
         // exibir nome do passageiro
         holder.nome.setText(passageiro.getNome());
 
+        // testar se há motorista disponível
         if (motorista != null) {
             // calcular a distancia entre o passageiro e o motorista
             LatLng localPassageiro = new LatLng(
@@ -54,8 +56,9 @@ public class RequisicoesAdapter extends RecyclerView.Adapter<RequisicoesAdapter.
                     Double.parseDouble(motorista.getLatitude()),
                     Double.parseDouble(motorista.getLongitude())
             );
-
-            holder.distancia.setText("O km - aproximadamente");
+            float distancia = Local.calcularDistancia(localPassageiro, localMotorista);
+            String distanciaFormatada = Local.formatarDistancia(distancia);
+            holder.distancia.setText(distanciaFormatada + "- aproximadamente");
         }
     }
 

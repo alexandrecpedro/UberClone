@@ -10,7 +10,7 @@ public class ConfiguracaoFirebase {
     private static FirebaseAuth auth;
 
     // Retorna a instância do FirebaseDatabase
-    public static DatabaseReference getFirebaseDatabase(){
+    public static DatabaseReference getFirebaseDatabase() {
         // Verificação
         if (database == null) {
             database = FirebaseDatabase.getInstance().getReference();
@@ -19,7 +19,7 @@ public class ConfiguracaoFirebase {
     }
 
     // Retorna a instância do FirebaseAuth
-    public static FirebaseAuth getFirebaseAutenticacao(){
+    public static FirebaseAuth getFirebaseAutenticacao() {
         // Verificação
         if (auth == null) {
             auth = FirebaseAuth.getInstance();

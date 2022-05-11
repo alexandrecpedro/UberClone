@@ -21,7 +21,7 @@ public class Usuario implements Serializable {
     public Usuario() {}
 
     // Methods
-    public void salvar(){
+    public void salvar() {
         // Referência do BD
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
         // Criando nó "usuarios" e nó "idUsuario"

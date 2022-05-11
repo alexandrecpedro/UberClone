@@ -69,6 +69,55 @@ public class RequisicoesActivity extends AppCompatActivity {
         recuperarLocalizacaoUsuario();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        verificaStatusRequisicao();
+    }
+
+    /** Verificando a situação (status) da requisição **/
+    private void verificaStatusRequisicao() {
+        // Recuperando dados do motorista logado
+        Usuario usuarioLogado = UsuarioFirebase.getDadosUsuarioLogado();
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
+
+        DatabaseReference requisicoes = firebaseRef.child("requisicoes");
+
+        // Recuperando os dados das requisicoes, ordenadas por motorista e pelo id do motoristaLogado
+        Query requisicoesPesquisa = requisicoes.orderByChild("motorista/id")
+                .equalTo(usuarioLogado.getId());
+
+        // Fazendo uma pesquisa específica
+        requisicoesPesquisa.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // recuperando os itens
+                for (DataSnapshot ds: dataSnapshot.getChildren()) {
+                    /* TODO Para não ter várias requisições, o ideal é criar um nó
+                    com apenas uma requisição ativa, identificada por id.
+                    Ao cancelar essa requisição, bastaria apenas removê-la do nó */
+                    Requisicao requisicao = ds.getValue(Requisicao.class);
+
+                    // testando o status dessa requisição
+                    // visa enviar usuário para CorridaActivity => STATUS_A_CAMINHO ou STATUS_VIAGEM
+                    if (requisicao.getStatus().equals(Requisicao.STATUS_A_CAMINHO)
+                            || requisicao.getStatus().equals(Requisicao.STATUS_VIAGEM)
+                            || requisicao.getStatus().equals(Requisicao.STATUS_FINALIZADA)) {
+                        /* recuperar os dados do motorista (enviando para a CorridaActivity,
+                        motorista já configurado) */
+                        motorista = requisicao.getMotorista();
+                        abrirTelaCorrida(requisicao.getId(), motorista, true);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     /** Recuperando a localização do usuário **/
     private void recuperarLocalizacaoUsuario() {
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
@@ -79,11 +128,20 @@ public class RequisicoesActivity extends AppCompatActivity {
                 String latitude = String.valueOf(location.getLatitude());
                 String longitude = String.valueOf(location.getLongitude());
 
-                // Atualizar GeoFire
+                //Atualizar GeoFire
+                UsuarioFirebase.atualizarDadosLocalizacao(
+                        location.getLatitude(),
+                        location.getLongitude()
+                );
 
                 if (!latitude.isEmpty() && !longitude.isEmpty()) {
                     motorista.setLatitude(latitude);
                     motorista.setLongitude(longitude);
+
+                    // TODO exibir uma tela carregando. Após dado estar carregado, exibir carregamento
+                    /* Apenas adicionando o evento de clique no RecyclerView somente
+                    após ter (latitude, longitude) do motorista */
+                    adicionaEventoCliqueRecyclerView();
                     locationManager.removeUpdates(locationListener);
                     adapter.notifyDataSetChanged();
                 }
@@ -136,6 +194,14 @@ public class RequisicoesActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void abrirTelaCorrida(String idRequisicao, Usuario motorista, boolean requisicaoAtiva) {
+        Intent i = new Intent(RequisicoesActivity.this, CorridaActivity.class);
+        i.putExtra("idRequisicao", idRequisicao);
+        i.putExtra("motorista", motorista);
+        i.putExtra("requisicaoAtiva", requisicaoAtiva);
+        startActivity(i);
+    }
+
     private void inicializarComponentes() {
 
         getSupportActionBar().setTitle("Requisições");
@@ -156,6 +222,10 @@ public class RequisicoesActivity extends AppCompatActivity {
         recyclerRequisicoes.setHasFixedSize(true);
         recyclerRequisicoes.setAdapter(adapter);
 
+        recuperarRequisicoes();
+    }
+
+    private void adicionaEventoCliqueRecyclerView() {
         //Adiciona evento de clique no recycler
         recyclerRequisicoes.addOnItemTouchListener(
                 new RecyclerItemClickListener(
@@ -165,12 +235,8 @@ public class RequisicoesActivity extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
                                 /* quando usuario clicar, recuperamos
-                                * a lista de requisicoes */
+                                 * a lista de requisicoes */
                                 Requisicao requisicao = listaRequisicoes.get(position);
-                                Intent i = new Intent(RequisicoesActivity.this, CorridaActivity.class);
-                                i.putExtra("idRequisicao", requisicao.getId());
-                                i.putExtra("motorista", motorista);
-                                startActivity(i);
                                 abrirTelaCorrida(requisicao.getId(), motorista, false);
                             }
 
@@ -186,8 +252,6 @@ public class RequisicoesActivity extends AppCompatActivity {
                         }
                 )
         );
-
-        recuperarRequisicoes();
     }
 
     private void recuperarRequisicoes() {
